@@ -1,0 +1,1 @@
+SELECT COUNT(c.idCurso) as "Total Cursos" FROM curso c
