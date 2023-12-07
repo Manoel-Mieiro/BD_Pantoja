@@ -1,0 +1,12 @@
+-- 2. Histórico do aluno Funny Valentine (id = 19), que concluiu todas as disciplinas (aprovado em todas) e concluiu o curso. 
+
+SELECT a.nome, a.sobrenome, c.nome, d.nome
+FROM historico h 
+JOIN aluno_grade as ag ON (h.matricula = ag.matricula) 
+JOIN aluno as a ON (ag.idAluno = a.idAluno) 
+JOIN disciplina as d ON (h.idDisciplina = d.idDisciplina)
+JOIN grade_disciplina as gd ON (d.idDisciplina = gd.idDisciplina)
+JOIN grade as g ON (gd.idGrade = g.idGrade) 
+JOIN curso c ON (g.idCurso = c.idCurso) 
+JOIN politecnico p ON (c.idPolitecnico = p.idPolitecnico) 
+WHERE a.idAluno = 19

@@ -1,0 +1,8 @@
+-- 1. Todas as disciplinas da minha grade (id=9) , juntamente com o nome do curso e politécnico
+SELECT p.nome, c.nome, d.nome
+FROM disciplina d 
+JOIN grade_disciplina gd  ON (gd.idDisciplina = d.idDisciplina) 
+JOIN grade g ON (g.idGrade = gd.idGrade) 
+JOIN curso c ON (c.idCurso = g.idCurso) 
+JOIN politecnico p ON (p.idPolitecnico = c.idPolitecnico )
+WHERE c.idCurso = 10
